@@ -683,7 +683,7 @@ deps_config := \
 	target/Config.in.arch \
 	Config.in
 
-/home/zaqwes/emb/all/buildroot-2010.08/output/build/buildroot-config/auto.conf: \
+/home/zaqwes/emb/all/sk-mat91sam9g45-m10/V3/buildroot-2010.08/output/build/buildroot-config/auto.conf: \
 	$(deps_config)
 
 
