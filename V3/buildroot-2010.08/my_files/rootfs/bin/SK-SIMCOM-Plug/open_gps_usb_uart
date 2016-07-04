@@ -1,0 +1,12 @@
+#!/bin/ash
+
+# Script for SK-SIMCOM-Plug management
+
+press_gsm_pwr_key
+echo Use ONLY with SIM5218 modem
+echo Must be connected USB cable
+echo Please wait for modem be ready ...
+sleep 15
+echo Now you must see NMEA sequence:
+echo at+cgps=1 > /dev/ttyUSB2
+microcom /dev/ttyUSB1

@@ -1,0 +1,8 @@
+#!/bin/ash
+
+# Script for SK-SIMCOM-Plug power management
+
+echo 1 > /dev/simcom_pwr
+sleep 2
+echo 0 > /dev/simcom_pwr
+sleep 1

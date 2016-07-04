@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# Start wi-fi....
+#
+
+start() {
+	echo "Starting wi-fi network ..."
+#	/sbin/iwconfig wlan0 mode managed
+	/sbin/iwconfig wlan0 mode ad-hoc
+#	/sbin/iwconfig wlan0 key s:12345
+	/sbin/iwconfig wlan0 essid SK
+	/sbin/ifconfig wlan0 192.168.3.136 up
+}	
+stop() {
+	echo -n "Stopping network ..."
+	/sbin/ifconfig wlan0 down
+}
+restart() {
+	stop
+	start
+}	
+
+case "$1" in
+  start)
+  	start
+	;;
+  stop)
+  	stop
+	;;
+  restart|reload)
+  	restart
+	;;
+  *)
+	echo $"Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?
+

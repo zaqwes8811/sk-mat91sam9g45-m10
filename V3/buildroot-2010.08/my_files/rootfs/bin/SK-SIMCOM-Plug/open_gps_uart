@@ -1,0 +1,9 @@
+#!/bin/ash
+
+# Script for SK-SIMCOM-Plug management
+
+echo 2 > /dev/simcom_pwr
+echo Use ONLY with SIM5X8 modem
+echo Must be sellected on plug GPS UART-B port.
+echo Now You can see NMEA sequence:
+microcom -s 4800 /dev/ttyS2

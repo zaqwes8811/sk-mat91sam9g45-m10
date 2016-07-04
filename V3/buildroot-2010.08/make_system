@@ -1,0 +1,18 @@
+#!/bin/sh
+
+cp -r ./my_files/rootfs/* ./output/target
+
+make
+
+#cp ./output/images/rootfs.cpio.gz /tftpboot/rootfs.cpio.gz
+
+rm /tftpboot/rootfs_mat9g45.tgz
+cd ./output/target
+tar czvf ./rootfs.tgz ./*
+cp ./rootfs.tgz /tftpboot/rootfs_mat9g45.tgz
+rm ./rootfs.tgz
+cd ../../
+
+cd ../linux-2.6.36-rc6
+./make_kernel
+
